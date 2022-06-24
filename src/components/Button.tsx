@@ -6,16 +6,20 @@ interface ButtonProps {
   b: { name: string; url: string };
 }
 const Button = ({ b }: ButtonProps) => {
-  const { changeURL } = useContext(GlobalContext);
+  const { changeURL, active } = useContext(GlobalContext);
 
   return (
-    <Link
-      to="/"
-      onClick={() => changeURL(b.url)}
-      className="btn btn-success m-2"
-    >
-      {b.name}
-    </Link>
+    <div className="d-flex flex-column justify-content-center align-items-center">
+      <Link
+        to="/"
+        onClick={() => changeURL(b.url, b.name)}
+        className="btn btn-success m-2"
+      >
+        {b.name}
+      </Link>
+      {/* subrayado de la categoría actual */}
+      <span className={`${active === b.name && "underline"}`}></span>
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@ const Home = () => {
   const { drinks, loading } = useContext(GlobalContext);
 
   if (loading) {
-    return <div>loading</div>;
+    return <div className="fs-1 text-center">Cargando...</div>;
   }
   return (
     <section>

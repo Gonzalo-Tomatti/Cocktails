@@ -33,6 +33,12 @@ h5 {
   background-color: rgba(45, 45, 43, 0.8);
 }
 
+/* FILTER */
+.underline {
+  height: 2px;
+  width: 50%;
+  background-color: #198754;
+}
 /* COCKTAIL */
 .card {
   border: transparent;
@@ -54,11 +60,37 @@ a {
   text-decoration: none;
 }
 
+/* COCKTAIL INFO */
+.arrow {
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow:hover {
+  color: rgb(217, 215, 215);
+}
+
+.drink-img {
+  object-fit: cover;
+  width: 80%;
+  max-height: 30rem;
+}
+
 @media screen and (min-width: 576px) {
+  /* COCKTAIL */
   .card {
     width: 100%;
   }
+
   a:hover {
     transform: scale(1.1);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* COCKTAIL INFO */
+  .drink-img {
+    width: 50%;
   }
 }

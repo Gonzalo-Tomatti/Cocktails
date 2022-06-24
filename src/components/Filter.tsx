@@ -27,7 +27,7 @@ const Filter = () => {
 
   return (
     <div className="container">
-      <div className="d-flex justify-content-center flex-wrap mb-5">
+      <div className="d-flex justify-content-center align-items-center flex-wrap mb-5">
         <Link
           to={"/cocktail-info/random"}
           className="btn btn-light m-2"
