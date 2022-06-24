@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans:400|Quattrocento:400");
+
+body {
+  font-family: "Quattrocento Sans", sans-serif;
+  color: rgb(226, 223, 218);
+  background-color: rgb(38, 38, 38);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Quattrocento", serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-webkit-scrollbar-track {
+  background-color: rgb(234, 229, 224);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(45, 45, 43);
+  border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(45, 45, 43, 0.8);
+}
+
+/* COCKTAIL */
+.card {
+  border: transparent;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card-body {
+  height: 4rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.img {
+  object-fit: cover;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 576px) {
+  .card {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  a:hover {
+    transform: scale(1.1);
   }
 }
