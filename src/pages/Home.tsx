@@ -1,13 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import Cocktail from "../components/Cocktail";
 
 const Home = () => {
-  const { drinks, loading } = useContext(GlobalContext);
-
+  const { drinks, loading, setViewingDrink } = useContext(GlobalContext);
+  useEffect(() => setViewingDrink(false), []);
   if (loading) {
     return <div className="fs-1 text-center">Cargando...</div>;
   }
+  if (drinks.length < 1) {
+    return (
+      <p className="text-light text-center">
+        No hay bebidas con el nombre buscado
+      </p>
+    );
+  }
+  console.log(drinks.length < 1);
   return (
     <section>
       <div className="container p-3">

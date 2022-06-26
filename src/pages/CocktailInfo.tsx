@@ -8,9 +8,11 @@ const CocktailInfo = () => {
   const [cocktail, setCocktail] = useState<CocktailInterface>();
   const [ingredients, setIngredients] = useState<Array<string>>([]);
   const { id } = useParams();
-  const { randomFlag, fetchCocktails, loading } = useContext(GlobalContext);
+  const { randomFlag, fetchCocktails, loading, setViewingDrink } =
+    useContext(GlobalContext);
 
   useEffect(() => {
+    setViewingDrink(true);
     let url: string =
       id === "random"
         ? "https://www.thecocktaildb.com/api/json/v1/1/random.php"

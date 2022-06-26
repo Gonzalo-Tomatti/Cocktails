@@ -77,6 +77,23 @@ a {
   max-height: 30rem;
 }
 
+/* SEARCH BAR */
+.search {
+  outline: none;
+  border: transparent;
+}
+
+.search-container {
+  background-color: white;
+  height: 38px;
+  width: 13rem;
+  border-radius: 1rem;
+}
+
+.search-icon {
+  height: 0.8rem;
+}
+
 @media screen and (min-width: 576px) {
   /* COCKTAIL */
   .card {
@@ -85,6 +102,11 @@ a {
 
   a:hover {
     transform: scale(1.1);
+  }
+
+  /* SEARCH BAR */
+  .search-container {
+    width: 16rem;
   }
 }
 

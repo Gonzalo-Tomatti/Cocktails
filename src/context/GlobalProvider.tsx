@@ -14,6 +14,7 @@ export const GlobalProvider = ({ children }: ProviderProps) => {
   );
   const [randomFlag, setRandomFlag] = useState<boolean>(false);
   const [active, setActive] = useState<string>("Con alcohol");
+  const [viewingDrink, setViewingDrink] = useState<boolean>(false);
 
   /*randomFlag asegura que se pueda seguir cambiando la bebida aunque el url para fetchear una random siga siendo el mismo (no importa si está en true o false, lo único que importa es que cambie para usarlo en el useEffect de CocktailInfo)*/
   const showRandom = (): void => {
@@ -41,6 +42,18 @@ export const GlobalProvider = ({ children }: ProviderProps) => {
     });
   }, [category]);
 
+  const searchDrink = (name: string) => {
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`;
+    setLoading(true);
+    fetchCocktails(url).then((fetchedDrinks) => {
+      if (fetchedDrinks) {
+        setDrinks(fetchedDrinks);
+      } else {
+        setDrinks([]);
+      }
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -48,6 +61,9 @@ export const GlobalProvider = ({ children }: ProviderProps) => {
         changeURL,
         showRandom,
         fetchCocktails,
+        searchDrink,
+        setViewingDrink,
+        viewingDrink,
         active,
         randomFlag,
         loading,

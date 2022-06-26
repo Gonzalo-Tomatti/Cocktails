@@ -7,12 +7,14 @@ import Home from "./pages/Home";
 import CocktailInfo from "./pages/CocktailInfo";
 import NotFound from "./pages/NotFound";
 import Title from "./components/Title";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
     <HashRouter>
       <GlobalProvider>
         <Title />
+        <SearchBar />
         <Filter />
         <Routes>
           <Route path="/" element={<Home />} />
